@@ -1,0 +1,5 @@
+#node_modulos
+node_modules
+
+#.env
+.env
