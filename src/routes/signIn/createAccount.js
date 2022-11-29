@@ -18,13 +18,6 @@ router.post('/', async (req, res)=>{
             usuario_update,
         }
 
-        /*
-        check('usuario_dni')
-        .length(8)
-        .isString()
-        .isNumeric()
-        */
-
         user.usuario_create = await helpers.getDateNow();
         
         user.usuario_update = await helpers.getDateNow();
@@ -41,7 +34,9 @@ router.post('/', async (req, res)=>{
         res.send("user");
         
     } catch (error) {
+
         res.send(error);
+
     }
 });
 
