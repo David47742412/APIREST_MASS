@@ -5,7 +5,7 @@ const router = Router();
 const helpers = require('../../lib/helpers');
 
 router.post('/', async (req, res)=>{
-    try {
+
         const { usuario_nombre, usuario_apellido, usuario_numero, usuario_email, usuario_password, usuario_token, usuario_create, usuario_update, usuario_foto } = req.body;
         const user = {
             usuario_nombre,
@@ -27,19 +27,16 @@ router.post('/', async (req, res)=>{
 
         user.usuario_password = await helpers.encrypPassword(usuario_password);
     
-        user.usuario_token = undefined;
+        user.usuario_token = helpers.getToken({
+            usuario_email: usuario_email,
+            usuario_password: usuario_password
+        });
     
         user.usuario_token = await helpers.getToken(user);
 
         await pool.query('INSERT INTO usuario set ?', [user]);
     
-        res.send("Usuario Creado satisfactoriamente");
-        
-    } catch (error) {
-
-        res.send(error);
-
-    }
+        res.send("Usuario Creado satisfactoriamente")
 });
 
 module.exports = router;
