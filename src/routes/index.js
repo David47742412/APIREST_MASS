@@ -9,6 +9,8 @@ router.use('/signIn', require('./signIn/createAccount.js'));
 
 router.use('/listar', require('./listaccount/listAccount.js'));
 
-router.use('update/:id', require('./signIn/updateAccount.js'))
+router.use('/update', require('./signIn/updateAccount.js'))
+
+router.use('/delete', require('./signIn/deleteAccount.js'))
 
 module.exports = router;

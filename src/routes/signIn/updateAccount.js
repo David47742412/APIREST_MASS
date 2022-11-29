@@ -18,9 +18,11 @@ router.patch('/:id' , async (req, res) => {
             usuario_foto
     };
 
+    user_id = parseInt(req.params.id)
+
     user.usuario_update = helpers.getDateNow();
     
-    await pool.query(`UPDATE usuario SET = ?  WHERE usuario_id = ?`, [user, req.params.id])
+    await pool.query(`UPDATE usuario SET ? = ?  WHERE usuario_id = ?`, [user, user, user_id])
 
     res.send('usuario Actualizado');
 
