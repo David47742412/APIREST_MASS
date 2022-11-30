@@ -27,10 +27,7 @@ router.post('/', async (req, res)=>{
 
         user.usuario_password = await helpers.encrypPassword(usuario_password);
     
-        user.usuario_token = helpers.getToken({
-            usuario_email: usuario_email,
-            usuario_password: usuario_password
-        });
+        user.usuario_token = "Este es el Token";
     
         user.usuario_token = await helpers.getToken(user);
 
