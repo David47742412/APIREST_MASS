@@ -1,6 +1,5 @@
 const bcryp = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const { semilla } = require('../keys');
 
 const helpers = {
 }
