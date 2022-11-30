@@ -17,9 +17,11 @@ helpers.matchPassword = async (password, savePassword)=>{
     }
 };
 
+/*
 helpers.getToken = async (payload) => {
     return jwt.sign(payload, semilla);
 }
+*/
 
 helpers.getDateNow = async () => {
     const date = new Date(Date.now());
