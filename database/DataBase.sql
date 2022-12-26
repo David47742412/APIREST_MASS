@@ -10,7 +10,7 @@ DROP TABLE moneda;
 CREATE TABLE usuario (
     
     usuario_id INT unsigned UNIQUE AUTO_INCREMENT,
-    usuario_foto VARCHAR(50),
+    usuario_foto VARCHAR(120),
     usuario_dni char(8) UNIQUE,
     usuario_nombre VARCHAR(50),
     usuario_apellido VARCHAR(50),
