@@ -44,7 +44,7 @@ router.post('/', async (req, res)=>{
         user.usuario_password = await bcrypt.hash(usuario_password, 12);
     
         user.usuario_token = await helpers.getToken({
-            usuario_correo: user.usuario_password,
+            usuario_correo: user.usuario_email,
             usuario_password: user.usuario_password
         });
 
