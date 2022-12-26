@@ -26,7 +26,9 @@ router.get('/:usuario_email/:usuario_password', async (req, res) => {
             })
         }
     } catch (err) {
-       res.json(false);
+       res.json({
+        success: false
+       });
     } 
 
 })
