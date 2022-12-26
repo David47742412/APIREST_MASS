@@ -20,8 +20,6 @@ router.patch('/:id' , async (req, res) => {
 
     user_id = parseInt(req.params.id)
 
-    user.usuario_password = await helpers.encrypPassword(usuario_password);
-
     user.usuario_update = await helpers.getDateNow();
     
     await pool.query(`UPDATE usuario SET ? = ?  WHERE usuario_id = ?`, [user, user, user_id]);
