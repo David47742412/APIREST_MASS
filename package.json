@@ -4,9 +4,9 @@
   "description": "To make it easy for you to get started with GitLab, here's a list of recommended next steps.",
   "main": "index.js",
   "scripts": {
-    "dev": "node src",
-    "dev1": "nodemon src",
-    "start": "node src"
+    "dev": "node",
+    "dev1": "nodemon",
+    "start": "node"
   },
   "repository": {
     "type": "git",
@@ -20,7 +20,14 @@
   },
   "homepage": "https://gitlab.com/grupo289/backend-team#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "class-validator": "^0.13.2",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "express-jwt": "^8.2.1",
+    "express-validator": "^6.14.2",
+    "fs": "^0.0.1-security",
+    "https": "^1.0.0",
     "mysql": "^2.18.1",
     "util": "^0.12.5"
   },

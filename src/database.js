@@ -6,7 +6,7 @@ const {database} = require('./keys');
 const pool = mysql.createPool(database);
 pool.getConnection((err, connection)=>{
     if(err){
-        console.log('Ocurrió algun error');
+        console.log('Ocurrió algun error\n' + err);
      }
      if(connection){
       connection.release();
