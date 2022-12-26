@@ -16,7 +16,7 @@ CREATE TABLE usuario (
     usuario_apellido VARCHAR(50),
     usuario_numero char(9),
     usuario_email VARCHAR(50) UNIQUE,
-    usuario_password VARCHAR(50),
+    usuario_password VARCHAR(80),
     usuario_create DATETIME,
     usuario_update DATETIME,
     usuario_latitud FLOAT,

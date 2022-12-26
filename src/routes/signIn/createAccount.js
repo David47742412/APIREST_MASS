@@ -41,7 +41,7 @@ router.post('/', async (req, res)=>{
         
         user.usuario_update = await helpers.getDateNow();
 
-        user.usuario_password = await bcrypt.hash(usuario_password, 12);
+        user.usuario_password = await helpers.encryptPassword(usuario_password);
     
         user.usuario_token = await helpers.getToken({
             usuario_correo: user.usuario_email,

@@ -5,7 +5,7 @@ const { semilla } = require('../keys');
 const helpers = {
 }
 
-helpers.encrypPassword = async (password) => {
+helpers.encryptPassword = async (password) => {
   return await bcrypt.hash(password, 12);
 };
 
