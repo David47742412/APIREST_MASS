@@ -15,13 +15,16 @@ router.get('/:usuario_email/:usuario_password', async (req, res) => {
     
     try {
         if (info.toString() !== "" && await helpers.matchPassword(password, info[0].usuario_password) ) {
-                
-            res.json({ 
-                success: true
+            
+            const usuario = await pool.query("SELECT * FROM usuario WHERE usuario_email = ?", [email])
+
+            res.send({ 
+                success: true,
+                usuario: usuario
             });
     
         } else {
-            res.json({
+            res.send({
                 success: false
             })
         }
