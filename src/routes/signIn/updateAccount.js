@@ -25,6 +25,8 @@ router.patch('/:id' , async (req, res) => {
 
     user.usuario_update = await helpers.getDateNow();
 
+    user.usuario_foto = "https://cdn.discordapp.com/attachments/1038961932671143986/1058419940111171694/13.png";
+
     await pool.query(`UPDATE usuario SET ? = ?  WHERE usuario_id = ?`, [user, user, user_id]);
 
     res.send('usuario Actualizado');
