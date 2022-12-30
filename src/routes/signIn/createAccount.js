@@ -37,7 +37,7 @@ router.post('/', async (req, res)=>{
 
         user.usuario_create = await helpers.getDateNow();
 
-        user.usuario_foto = await "https://i.ibb.co/YThSnKy/vector-de-perfil-avatar-predeterminado-foto-usuario-medios-sociales-icono-183042379.jpg"
+        user.usuario_foto = await "https://cdn.discordapp.com/attachments/1038961932671143986/1058419940111171694/13.png"
         
         user.usuario_update = await helpers.getDateNow();
 
