@@ -13,12 +13,14 @@ router.use('/update', require('./signIn/updateAccount.js'));
 
 router.use('/delete', require('./signIn/deleteAccount.js'));
 
-router.use('/messageDatailtCreate', require('./chat/createMessageDetail'));
+router.use('/messageDatailtCreate', require('./chat/createMessageDetail.js'));
 
-router.use('/messageCreate', require('./chat/createmessage'));
+router.use('/messageCreate', require('./chat/createmessage.js'));
 
-router.use('/messageListar', require('./chat/listarMessage'));
+router.use('/messageListar', require('./chat/listarMessage.js'));
 
-router.use('/isaccount', require('./listaccount/getAccount'))
+router.use('/messageDetailListar', require('./chat/listarMessageDatail.js'))
+
+router.use('/isaccount', require('./listaccount/getAccount.js'))
 
 module.exports = router;

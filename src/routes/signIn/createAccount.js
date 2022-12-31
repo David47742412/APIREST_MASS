@@ -20,6 +20,7 @@ router.post('/', async (req, res)=>{
                 usuario_latitud,
                 usuario_longitud
             } = req.body;
+            
         const user = {
             usuario_nombre,
             usuario_apellido,
