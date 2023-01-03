@@ -49,8 +49,8 @@ CREATE TABLE moneda(
 CREATE TABLE mensaje_detalle (
 
     mensaje_detalle_id INT UNSIGNED UNIQUE AUTO_INCREMENT,
-    mensaje_id INT UNSIGNED UNIQUE,
-    usuario_id INT UNSIGNED UNIQUE,
+    mensaje_id INT,
+    usuario_id INT,
     PRIMARY KEY (mensaje_detalle_id)
 );
 

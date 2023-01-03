@@ -21,6 +21,8 @@ router.use('/messageListar', require('./chat/listarMessage.js'));
 
 router.use('/messageDetailListar', require('./chat/listarMessageDatail.js'))
 
+router.use('', require('')) // mensaje_id
+
 router.use('/isaccount', require('./listaccount/getAccount.js'))
 
 module.exports = router;

@@ -12,6 +12,7 @@ router.post('/', async (req, res) => {
     };
 
     pool.query("INSERT INTO mensaje_detalle SET ?", [messageDetail]);
+    
     res.send("Mensaje_detalle creado");
 
 })
