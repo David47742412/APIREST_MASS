@@ -19,10 +19,10 @@ router.use('/messageCreate', require('./chat/createmessage.js'));
 
 router.use('/messageListar', require('./chat/listarMessage.js'));
 
-router.use('/messageDetailListar', require('./chat/listarMessageDatail.js'))
+router.use('/messageDetailListar', require('./chat/listarMessageDatail.js'));
 
-router.use('', require('')) // mensaje_id
+router.use('/getMessage', require('./chat/getMensaje.js')); // mensaje_id
 
-router.use('/isaccount', require('./listaccount/getAccount.js'))
+router.use('/isaccount', require('./listaccount/getAccount.js'));
 
 module.exports = router;
