@@ -5,10 +5,10 @@ const helpers = require('../../lib/helpers');
 
 router.get('/:id', async (req, res) => {
 
-    res.json({ 
-        mensaje: await pool.query('SELECT * FROM mensaje where mensaje_id = ?', [req.params.id])
+    res.json({
+        usuario: await pool.query('select * from usuario where usuario_id = ?', [req.params.id])
     });
 
 })
 
-module.exports = router
+module.exports = router;

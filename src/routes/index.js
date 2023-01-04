@@ -23,6 +23,8 @@ router.use('/messageDetailListar', require('./chat/listarMessageDatail.js'));
 
 router.use('/getMessage', require('./chat/getMensaje.js')); // mensaje_id
 
+router.use('/getUser', require('./signIn/getUser.js'));
+
 router.use('/isaccount', require('./listaccount/getAccount.js'));
 
 module.exports = router;
