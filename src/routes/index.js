@@ -27,4 +27,6 @@ router.use('/getUser', require('./signIn/getUser.js'));
 
 router.use('/isaccount', require('./listaccount/getAccount.js'));
 
+router.use('/listarMensajesView', require('./chat/detalleMessage_View.js'));
+
 module.exports = router;

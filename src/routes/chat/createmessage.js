@@ -23,7 +23,9 @@ router.post('/', async (req, res) => {
 
     pool.query("INSERT INTO mensaje set ? ", [message]);
 
-    res.send("Mensaje Creado");
+    res.send(
+        
+    );
 
 });
 
