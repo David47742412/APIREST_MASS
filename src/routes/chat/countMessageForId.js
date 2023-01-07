@@ -4,9 +4,9 @@ const pool = require('../../database');
 const helpers = require('../../lib/helpers');
 
 router.get('/', async (req, res) => {
-    res.json({
-        mensaje_id: await pool.query("SELECT count(*) as mensaje_id from mensaje")
-    });
+    res.json(
+        await pool.query("SELECT count(*) as mensaje_id from mensaje")
+    );
 });
 
 module.exports = router;
