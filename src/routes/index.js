@@ -29,4 +29,6 @@ router.use('/isaccount', require('./listaccount/getAccount.js'));
 
 router.use('/listarMensajesView', require('./chat/detalleMessage_View.js'));
 
+router.use('/mensajeIdForDetail', require('./chat/countMessageForId.js'));
+
 module.exports = router;
