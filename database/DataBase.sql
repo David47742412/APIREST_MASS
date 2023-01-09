@@ -82,10 +82,14 @@ ALTER TABLE mensaje_detalle ADD CONSTRAINT fk_mensaje_mensaje_detalle FOREIGN KE
 
 -- esto es para los mensajes
 
+CREATE TABLE apoyo_id(
+	mensaje_id Int
+);
+
 DROP TRIGGER IF EXISTS insertId;
 DELIMITER $$
 
-CREATE TRIGGER insertId AFTER INSERT ON MENSAJE
+CREATE TRIGGER insertId AFTER INSERT ON mensaje
 FOR EACH ROW
 BEGIN
 	DELETE FROM apoyo_id;
@@ -95,13 +99,19 @@ END $$
 
 DELIMITER ;
 
-CALL DevolverMensaje_P(@id);
-select @id;
+USE `mass`;
+DROP procedure IF EXISTS `DevolverMensaje_P`;
 
-CREATE TABLE apoyo_id(
-	mensaje_id Int
-);
+DELIMITER $$
+USE `mass`$$
+CREATE PROCEDURE `DevolverMensaje_P` (
+	OUT id Int
+)
+BEGIN
+	select count(*) into id from mensaje;
+END$$
 
+DELIMITER ;
 -- aqui acaba
 
 /* CREACIÓN DE LAS TABLAS */

@@ -24,7 +24,7 @@ router.get('/:mensaje_contenido/:mensaje_create/:mensaje_update', async (req, re
     await pool.query("INSERT INTO mensaje set ? ", [message]);
     
 
-    res.json(
+    res.send(
         await pool.query('select * from apoyo_id as mensaje_id')
     );
 
