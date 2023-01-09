@@ -49,8 +49,8 @@ CREATE TABLE moneda(
 CREATE TABLE mensaje_detalle (
 
     mensaje_detalle_id INT UNSIGNED UNIQUE AUTO_INCREMENT,
-    mensaje_id INT,
-    usuario_id INT,
+    mensaje_id INT UNSIGNED UNIQUE,
+    usuario_id INT UNSIGNED UNIQUE,
     PRIMARY KEY (mensaje_detalle_id)
 );
 
@@ -79,6 +79,30 @@ ALTER TABLE mensaje_detalle ADD CONSTRAINT fk_usuario_mensaje_detalle FOREIGN KE
 ALTER TABLE mensaje_detalle ADD CONSTRAINT fk_mensaje_mensaje_detalle FOREIGN KEY (mensaje_id) REFERENCES mensaje(mensaje_id);
 
 /* FIN DE LAS RELACIONES FK */
+
+-- esto es para los mensajes
+
+DROP TRIGGER IF EXISTS insertId;
+DELIMITER $$
+
+CREATE TRIGGER insertId AFTER INSERT ON MENSAJE
+FOR EACH ROW
+BEGIN
+	DELETE FROM apoyo_id;
+	CALL DevolverMensaje_P(@id);
+	INSERT INTO apoyo_id value(@id);
+END $$
+
+DELIMITER ;
+
+CALL DevolverMensaje_P(@id);
+select @id;
+
+CREATE TABLE apoyo_id(
+	mensaje_id Int
+);
+
+-- aqui acaba
 
 /* CREACIÓN DE LAS TABLAS */
 CREATE TABLE trabajo (

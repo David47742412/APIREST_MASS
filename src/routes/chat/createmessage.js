@@ -3,9 +3,9 @@ const router = Router();
 const pool = require('../../database');
 const helpers = require('../../lib/helpers');
 
-router.post('/', async (req, res) => {
+router.get('/:mensaje_contenido/:mensaje_create/:mensaje_update', async (req, res) => {
 
-    const { mensaje_contenido, mensaje_create, mensaje_update } = req.body;
+    const { mensaje_contenido, mensaje_create, mensaje_update }= req.params;
 
     const message = {
         mensaje_contenido,
@@ -21,10 +21,11 @@ router.post('/', async (req, res) => {
                                 message.mensaje_contenido == "" ||
                                 message.mensaje_contenido == null? "mensaje nulo" : message.mensaje_contenido;
 
-    pool.query("INSERT INTO mensaje set ? ", [message]);
+    await pool.query("INSERT INTO mensaje set ? ", [message]);
+    
 
-    res.send(
-        
+    res.json(
+        await pool.query('select * from apoyo_id as mensaje_id')
     );
 
 });
